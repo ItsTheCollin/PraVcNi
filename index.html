@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Romântico</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="app">
+        <div id="welcome-screen" class="screen">
+            <h1>Bem-vinda! Nicolly, meu amor.</h1>
+            <button onclick="nextScreen('intro-screen')">Continuar</button>
+        </div>
+
+        <div id="intro-screen" class="screen hidden">
+            <h1>Vamos brincar de adivinhar algumas datas importantes ???</h1>
+            <button onclick="nextScreen('question-1')">Sim</button>
+            <button onclick="showWarning()">Não</button>
+            <p id="warning" class="hidden">Sem essa sua fedida, pode apertar o sim! 😊</p>
+        </div>
+
+        <div id="question-1" class="screen hidden">
+            <h1>Quando saímos juntos pela primeira vez? (eu)</h1>
+            <input type="date" id="answer-1">
+            <button onclick="checkAnswer(1, '2024-06-29')">Enviar</button>
+            <p id="feedback-1" class="feedback hidden"></p>
+        </div>
+
+        <div id="question-2" class="screen hidden">
+            <h1>Quando começamos a namorar? (te)</h1>
+            <input type="date" id="answer-2">
+            <button onclick="checkAnswer(2, '2024-08-13')">Enviar</button>
+            <p id="feedback-2" class="feedback hidden"></p>
+        </div>
+
+        <div id="question-3" class="screen hidden">
+            <h1>Que dia é hoje? (amo)</h1>
+            <input type="date" id="answer-3">
+            <button onclick="checkToday()">Enviar</button>
+            <p id="feedback-3" class="feedback hidden"></p>
+        </div>
+
+        <div id="result-screen" class="screen hidden">
+            <h1>Parabéns, você acertou, meu amor!!!</h1>
+            <h4>Ni, quando estou contigo, me sinto como a letra de uma música de amor, onde tudo faz sentido e o mundo parece mais bonito, literalmente, te amo meu amor !!! tenha paciencia com a vida, tudo vai dar certo no tempo certo.</h4>
+            <div id="hearts">❤️❤️❤️❤️❤️</div>
+            <h3>Tempo desde a primeira vez que saímos:</h3>
+            <p id="time-since-first-date"></p>
+            <h3>Tempo de namoro:</h3>
+            <p id="time-since-dating"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
